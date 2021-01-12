@@ -1,0 +1,16 @@
+\chapter{Data}
+\label{cha:data}
+
+The data used is queried from Steam Web API \cite{steamworks} using Python for the games used in the project. 
+Data is stored in parquet file format \cite{apacheparquet} for efficient storing and good interaction with Pandas.
+Code used for extracting and storing is available in the repository \cite{repostitory}.
+
+The data from the reviews API consists of a summary of the statistics for the game, information about the author and the review itself with meta data. 
+The full specification is available on Steam review API page \cite{steamworks}.
+
+Processing of the data consisted of converting between different data types and creating a consistent dataset from the API. 
+Data types were converted to the most suited for use with the Python packages, such as Scikit-learn, Numpy and Pandas.
+Mostly this involved datetime convertions.
+
+The data was also stripped of personal information about the author, recommendationid and author, which could easily be used to trace the user accounts.
+Due to the Term of Use for Steam Web API \cite{steamapi} data is not provided with the project.

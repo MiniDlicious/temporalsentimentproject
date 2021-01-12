@@ -132,7 +132,6 @@ dmypy.json
 temp/
 papers/
 data/
-report/
 
 # LaTeX temporary files
 *.aux
