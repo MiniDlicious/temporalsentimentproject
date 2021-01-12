@@ -21,4 +21,4 @@ Note that some model can be computational heavy.
 Contributing to this project is done in the package repository [tempsent](https://github.com/MiniDlicious/tempsent).
 
 ## License
-[MIT](https://choosealicense.com/licenses/mit/)
+[GNU GPLv3](https://choosealicense.com/licenses/gpl-3.0/)
