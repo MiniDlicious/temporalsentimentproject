@@ -1,6 +1,6 @@
 # Temporal Sentiment Analysis and Visualization
 
-A Text Mining project containing data extraction, model selection, model validation and visualization. Project is described in the report <span style="color:red">**LINK**</span> and the code is for now in notebooks. There is one notebook for fetching game reviews from Steam API, [steam reviews.ipynb](notebooks/steam%20reviews.ipynb), and another one for the analysis [tempsent.ipynb](notebooks/tempsent.ipynb).
+A Text Mining project containing data extraction, model selection, model validation and visualization. Project is described in the [report](report/report.pdf) and the code is for now in notebooks. There is one notebook for fetching game reviews from Steam API, [steam reviews.ipynb](notebooks/steam%20reviews.ipynb), and another one for the analysis [tempsent.ipynb](notebooks/tempsent.ipynb).
 
 The template for the report is taken from [LiU Thesis Template](https://gitlab.ida.liu.se/olale55/liuthesis).
 
