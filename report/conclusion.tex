@@ -1,16 +1,15 @@
 \chapter{Conclusion}
 \label{cha:conclusion}
 
-Based on your results and their analysis, what new knowledge do you
-take away from your project?
 
-This chapter contains a summarization of the purpose and the research
-questions. To what extent has the aim been achieved, and what are the
-answers to the research questions?
+The sentiment classification were very similar to the true labels and since some misclassifications are TN or FN, looking at a plot of both is very similar to the true plot. 
+With a high accuracy of 83\% on validation data using Majority Voting the concept is working. 
+The outcome is a modular package that can digest text, classify based on sentiment and visualize the results. 
+Both code used and models were simple and would be easy to improve or change for the future. 
+The application is a complete pipeline and fulfills the aim of the project.
 
-The consequences for the target audience (and possibly for researchers
-and practitioners) must also be described. There should be a section
-on future work where ideas for continued work are described. If the
-conclusion chapter contains such a section, the ideas described
-therein must be concrete and well thought through.
-
+For future work all components could be worked with separatly or together. 
+With digestion and processing of text testing e.g. Term present, Term frequency–Inverse document frequency or Position of Speech tagging could improve the accuracy. 
+The models have not been tuned, e.g. using grid search for better parametrization, which is suggested to improve performance without using more computational models. 
+Then if there is computational resources other models such as Random Subspaces, Bagging or switching to deep learning models should improve performance. 
+However, it is proved that simple models can give a good result for everyday applications.

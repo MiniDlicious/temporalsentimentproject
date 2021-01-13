@@ -2,53 +2,64 @@
 \label{cha:method}
 
 
-
-Explain how you carried out your study. Aim to be detailed enough for
-others to reproduce your results.
-
-
-In this chapter, the method is described in a way which shows how the
-work was actually carried out. The description must be precise and
-well thought through. Consider the scientific term
-replicability. Replicability means that someone reading a scientific
-report should be able to follow the method description and then carry
-out the same study and check whether the results obtained are
-similar. Achieving replicability is not always relevant, but precision
-and clarity is.
-
-Sometimes the work is separated into different parts, e.g.  pre-study,
-implementation and evaluation. In such cases it is recommended that
-the method chapter is structured accordingly with suitable named
-sub-headings.
+In this chapter the implementation and methods used will be given. 
+For this work the aim has not been to create the most accurate classifier, but to utilize methods to create a framework that can later be improved.
 
 
-delat i moduler: extraction, classification and evaluation
-
-\section{Pre-study}
-\label{sec:prestudy}
-
-similar research ..
-
-steam reviews ..
-
-Text extraction ..
-
-Sentiment classification ..
-
-evaluation ..
+\section{Data Selection}
+\label{sec:data-selection}
 
 
-\section{Implementation}
-\label{sec:implementation}
+The two games selected, for training and test and validation, have different purposes. 
+The game chosen for validation is a game the author has prior knowledge about and is fairly new, meaning it has a limited amount of updates and also reviews. 
+For training and testing a larger dataset is wanted so a more known and older game that is still actively developed was chosen. 
+The language is quite specific and can be unique in the gaming community, which is why another game is used as training corpus. 
+However, review languange is also genre specific and the games chosen are from somewhat different genres.
+Only reviews in english were used for this project.
+
+
+\section{Corpus Preparation}
+\label{sec:corpus-preparation}
+
+
+Before the reviews were incorporated into a corpus the dataset has to be balanced between the classes, the reviews for GTA V are severely unbalanced.
+This also reduces the amount of training data, which is helpful for reducing the time taken for training the different models.
+Data is then divided into training and test data for model selection, with 70\% training and 30\% test data.
+
+
+The training reviews are then digested by CountVectorizer from scikit-learn to create the corpus. 
+Term Frequency (TF) of Unigrams was used as it is one of the simplest methods and should produce similar results as Term Present (TP) as described in chapter \nameref{cha:theory}. 
+Reviews for testing are then transformed into the corpus created. 
+For validation the complete train/test dataset will be used for training and validated on the full validation set.
+
+
+\section{Model Selection}
+\label{sec:model-selection}
+
+
+Different models were tested before a selection was made. 
+Since computational resources are not abundant models with fairly low complexity was used, also adhering to best practice to start with simple models.
+If the simple models, Multinomial Naive Bayes, Linear SVM, Logistic Regression and K-Nearest Neighbors, would produce unsatisfing results further investigation would be required.
+This would include more precise parametrization of the models or testing more complex models. 
+Above 75\% accuracy on the test data would be deemed good enough for a model as this is in parity with results from \cite{gang-wang, rui-xia} and this dataset is assumed be fairly simple. 
+For further proof of future improvement a Random Subspace model with SVM base was used with very basic parameterization, due to the complexity of the model.
+
+
+Models were trained and tested with the confusion matrix and accuracy evaluated for both training and testing data.
+Then the best models on the test data was also combined into a Majority Vote system as seen in chapter \nameref{cha:theory}.
+
+
+For validation the best outcome from testing would be used as sentiment classifier for the visualization analysis.
 
 
 \section{Evaluation}
 \label{sec:evaluation}
 
+
 For evaluation the similar Steam Reviews will be used for a game the author has knowledge about. 
 The author will predict the behaviour of the reviews based on knowledge about the game and by reading update notes from the developers to see what issues have been present in the game. 
-Then in this section there will be a prediction made before investigating the reviews and looking at the graphs presented by Steam. 
-This will later be used as a benchmark for the analysis package under \textcolor{red}{section YY}.
+Then in this section there will be a prediction made before investigating the reviews and comparing with the true label graphs. 
+This will later be used as a benchmark for the predictions on validation data in section \nameref{sec:evaluation-result}.
 
 
 The game chosen is a PC game named \emph{Wolcen: Lords of Mayhem}, which started as a kickstarter with the name \emph{Umbra}. \cite{kickstarter} 
@@ -58,14 +69,23 @@ However, the release was not as smoothed as anyone could have hoped for with ser
 At the same time it was a somewhat new take on the genre and had many positive elements that could evolve into the game that was expected. 
 
 
+Visualization of positive and negative reviews will be used with both the true labels and the predicted labels, along with the confusion matrix and accuracy.
+Also the top 5 words of each bin can be browsed using the visualization tool.
+
+
+\subsection{Review Prediction}
+\label{sec:review-prediction}
+
+
 The development team then released small patches and hotfixes to the game without any new content for almost a year. 
 The 3 December 2020 a large new content update was released that have been very sought for in the community. 
 This were another implementation of what was promised during the kickstarter campaign along with rebalancing and restarting the game and economy that had been affected by the early bugs at release. During the last month more hotfixes and small pathces has been released without any new content.
 
-At the time of writing the game has 54 000 reviews which will be used for evaluating the work performed in this report. 
+
 With the information about the game, over 100 hours of gameplay and looking over the patch notes and updates certain patterns are expected. 
 There has been lots of game breaking issues around release of the game, suggesting that there should be a fair amount of negative reviews. 
 Also looking at where in the development process according to the kickstarter campaign, these are not yet fulfilled at release meaning that content is missing that has been promised. 
+
 
 During a game release there will always be most active players just after release and later if there is large content releases. 
 This is where peaks in the reviews are expected, both negative and positive. 

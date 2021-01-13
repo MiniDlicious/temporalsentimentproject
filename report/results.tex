@@ -1,27 +1,17 @@
 \chapter{Results}
 \label{cha:results}
 
-Present your results in an objective way. Use tables and charts, but do not
-forget to also include a summary in text form. Do not interpret your results.
-
-This chapter presents the results. Note that the results are presented
-factually, striving for objectivity as far as possible.  The results
-shall not be analyzed, discussed or evaluated.  This is left for the
-discussion chapter.
-
-In case the method chapter has been divided into subheadings such as
-pre-study, implementation and evaluation, the result chapter should
-have the same sub-headings. This gives a clear structure and makes the
-chapter easier to write.
-
-In case results are presented from a process (e.g. an implementation
-process), the main decisions made during the process must be clearly
-presented and justified. Normally, alternative attempts, etc, have
-already been described in the theory chapter, making it possible to
-refer to it as part of the justification.
+This chapter is divided into results for selecting models and the evaluation of the unseen validation data using those models. 
 
 
-\begin{table}[]
+\section{Model Selection}
+\label{sec:model-selection-result}
+
+With the balanced training and test data different models were trained and the results are shown in tables. 
+The best values are marked in bold along with the true numbers for the confusion matrix. 
+
+
+\begin{table}[H]
     \centering
     \caption{Model result on train data.}
     \label{tab:train-table}
@@ -39,7 +29,16 @@ refer to it as part of the justification.
 \end{table}
 
 
-\begin{table}[]
+Result from training data is listed in table \ref{tab:train-table}. 
+For training Logistic Regression (LR) had best precision, as seen with high number of TP and low number of FP. 
+KNN instead has the best negative predictive value, low number of FN and high number of TN. 
+The dummy classifier performs worst with 50\% accuracy which is however the perfect score for a balance dataset with stratified dummy classifier. 
+Linear SVM and Multinomial Naive Bayes (MNB) have similar performance where MNB has slighly better values for positive predictions and SVM for negative predictions. 
+Best accuracy is gotten from Logistic Regression with 91\% accuracy. 
+The more complex Random Subspace model with very basic parametrization still gets 84\% accuracy, about same as KNN and slightly less than the other models.
+
+
+\begin{table}[H]
     \centering
     \caption{Model result on test data.}
     \label{tab:test-table}
@@ -57,8 +56,14 @@ refer to it as part of the justification.
 \end{table}
 
 
+Using the test data, table \ref{tab:test-table} there is quite a big shift in results, suggesting the different generalizations between the models. 
+The dummy classifier is the same as on the training data, as expected with balanced dataset. 
+Now MNB has the best precision and KNN the best negative predictive value. 
+KNN has the lowest accuracy at 78\% of the real models, despite having the best negative predictive value. 
+Overall the accuracy is just a bit lower than the training data with MNB, SVM and LR all on 86\% and will be used for the Majority Voting. 
 
-\begin{table}[]
+
+\begin{table}[H]
     \centering
     \caption{Majority Voting on test data.}
     \label{tab:voting-table}
@@ -70,8 +75,17 @@ refer to it as part of the justification.
 \end{table}
 
 
+In table \ref{tab:voting-table} is the result from Majority Voting, which was only performed on the test data. 
+Compared to the results in table \ref{tab:test-table} the confusion matrix is a combination of the three models used, while accuracy is slightly improved to 87\%. 
+This makes Majority Voting using Multinomial Naive Bayes, Linear SVM and Logistic Regression the most accurate of the methods presented. 
 
-\begin{table}[]
+
+\section{Evaluation}
+\label{sec:evaluation-result}
+
+For the evaluation all training and test data is used for traning the final models Multinomial Naive Bayes, Linear SVM, Logistic Regression and Majority Voting. 
+
+\begin{table}[H]
     \centering
     \caption{Model result on validation data.}
     \label{tab:validation-table}
@@ -86,10 +100,80 @@ refer to it as part of the justification.
     \end{tabular}
 \end{table}
 
+From table \ref{tab:validation-table} it is shown that MNB has best precision while SVM has best negative predictive value. 
+The accuracies for the models are about the same with the combination through Majority Voting being the highest at 83\%.
+
+
+Comparing the predicted, figure \ref{fig:plot-comp1}, with the true labels, figure \ref{fig:plot-comp2}, by plotting positive and negative reviews. 
+There is only a slight difference seen in the comparison due to the scaling. 
+Looking at the axis there is a small difference in maximum negaitive reviews and a small difference in positive reviews just behind the peak. 
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.9\textwidth}
+        \includegraphics[width=1\textwidth]{../plots/validation_plot.png}
+       \caption{}
+       \label{fig:plot-comp1} 
+    \end{subfigure}
+    
+    \begin{subfigure}[b]{0.9\textwidth}
+        \includegraphics[width=1\textwidth]{../plots/true_plot.png}
+       \caption{}
+       \label{fig:plot-comp2}
+    \end{subfigure}
+    
+    \caption[Plot of Reviews]{(a) The predicted sentiment from the reviews. (b) The true labels of the reviews.}
+\end{figure}
+
+
+If the plots are scaled using log base 10 a larger difference can be observed between the predicted, figure \ref{fig:plot-comp1-log}, and true figure \ref{fig:plot-comp1-log}. 
+
+
+\begin{figure}[H]
+    \centering
+    \begin{subfigure}[b]{0.9\textwidth}
+        \includegraphics[width=1\textwidth]{../plots/validation_plot_log.png}
+       \caption{}
+       \label{fig:plot-comp1-log} 
+    \end{subfigure}
+    
+    \begin{subfigure}[b]{0.9\textwidth}
+        \includegraphics[width=1\textwidth]{../plots/true_plot_log.png}
+       \caption{}
+       \label{fig:plot-comp2-log}
+    \end{subfigure}
+    
+    \caption[Plot of Scaled Reviews]{(a) The predicted sentiment from the reviews in log base 10. (b) The true labels of the reviews in log base 10.}
+\end{figure}
+
+
+Here a few more differences are found due to the scaling, mostly in the left part of the plots with few reviews since this is sensitive to scaling. 
 
 
 \begin{figure}[h]
-    \caption{Demo plot}
+    \caption{Plot showing the tool tip when hovering a bin.}
+    \label{fig:hover-tool}
     \centering
-    \includegraphics[width=1\textwidth]{../plots/demo.png}
+    \includegraphics[width=0.9\textwidth]{../plots/demo.png}
 \end{figure}
+
+Using the tool tips in the hover tool, as demonstrated in figure \ref{fig:hover-tool}, keywords can be extraced from the different bins. 
+This could be useful for a further analysis and see if the top words for positive and negative reviews respectively are changing over time. 
+A example of words found is listed in table \ref{tab:words}.
+
+
+\begin{table}[H]
+    \centering
+    \caption{Example of most common positive and negative words.}
+    \label{tab:words}
+    \begin{tabular}{@{}ll@{}}
+    \toprule
+    Positive & Negative \\ \midrule
+    game     & game     \\
+    good     & just     \\
+    like     & play     \\
+    great    & bugs     \\
+    fun      & like     \\
+    great    & time     \\ \bottomrule
+    \end{tabular}
+\end{table}

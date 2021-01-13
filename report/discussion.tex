@@ -1,26 +1,53 @@
 \chapter{Discussion}
 \label{cha:discussion}
 
-Analyse your results and discuss the possibilities and limitations of
-your technical approach. Compare your study to related work.
 
-This chapter contains the following sub-headings.
+This chapter analyse the results obtained and the method used, both described in respective chapter.
+
 
 \section{Results}
 \label{sec:discussion-results}
 
-Are there anything in the results that stand out and need be
-analyzed and commented on? How do the results relate to the
-material covered in the theory chapter? What does the theory
-imply about the meaning of the results? For example, what
-does it mean that a certain system got a certain numeric value
-in a usability evaluation; how good or bad is it? Is there
-something in the results that is unexpected based on the
-literature review, or is everything as one would theoretically
-expect?
+
+The results from training and testing the models are closely related to the results seen in related work, described in chapter \nameref{cha:theory}. 
+The KNN model was not used in any of the referenced works, but was included since it is a common ML model and results in non-linear classification borders. 
+It was unexpected to see that KNN performed so unbalanced, classifying negative reviews so well, but very poor on positive reviews. 
+Also the potential of Random Subspaces (RS) is hinted, it is used in a poorly parameterized way, but the generalization i.e. performance on test data is very good considering. 
+However, since it uses SVM as base model it should still be close to the Linear SVM model that is a more basic model than the SVM used in RS. 
+
+
+The majority voting incresed performance as expected from referenced papers in a similar way. 
+It could be argued that this increases complexity over just using one model, but it also balanced the FP and FN classifications. 
+Possibly using majority voting the classifications will be more stable over different datasets, this would require more investigation and could be future work. 
+Using low complexity models made the prediction time fast even when using the voting system.
+
+
+\subsection{Validation}
+\label{sec:discussion-validation}
+
+
+Since classifications of the validation dataset was good with over 80\% accuracy, the dataset used for training was representative enough. 
+The games, Wolcen and GTA V, are both similar and very different being in different sub-genres. 
+However, both are games and reviews resemble one another but genre specific words are probably not included in training. 
+The result could possibly be improved with a broader set of games used for training. 
+
+
+The models performed otherwise as expected with majority voting having the highest accuracy, just as described in related research. 
+Analyzing the plots created had very similar result, since FP and FN is balancing cancelling each other when looking at the figures. 
+It also looks like the misclassifications are distributed along the time axis, not causing any large difference in the overall shapes. 
+
+
+As for the most common positive and negative words they are quite expected. 
+Writing \emph{good}, \emph{great} or \emph{fun} in a positive review or \emph{bugs} in a negative review is probably common. 
+It looks like \emph{just} is very common in negative reviews, which might not be expected. 
+This is probably due to writing \emph{...just like *another game*..} or \emph{...just too many bugs...}, this analysis could also be future work.
+
 
 \section{Method}
 \label{sec:discussion-method}
+
+Analyse your results and discuss the possibilities and limitations of
+your technical approach. Compare your study to related work.
 
 This is where the applied method is discussed and criticized.
 Taking a self-critical stance to the method used is an
@@ -66,17 +93,3 @@ discuss these approaches.
 Usually however, there are always relevant related research.
 If not about the actual research questions, there is certainly
 important information about the domain under study.
-
-\section{The work in a wider context}
-\label{sec:work-wider-context}
-
-There must be a section discussing ethical and societal
-aspects related to the work. This is important for the authors
-to demonstrate a professional maturity and also for achieving
-the education goals. If the work, for some reason, completely
-lacks a connection to ethical or societal aspects this must be
-explicitly stated and justified in the section Delimitations in
-the introduction chapter.
-
-In the discussion chapter, one must explicitly refer to sources
-relevant to the discussion.
