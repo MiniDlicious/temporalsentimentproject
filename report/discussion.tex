@@ -10,13 +10,13 @@ This chapter analyse the results obtained and the method used, both described in
 
 
 The results from training and testing the models are closely related to the results seen in related work, described in chapter \nameref{cha:theory}. 
-The KNN model was not used in any of the referenced works, but was included since it is a common ML model and results in non-linear classification borders. 
+The K-Nearest Neighbors (KNN) model was not used in any of the referenced works, but was included since it is a common ML model and results in non-linear classification borders. 
 It was unexpected to see that KNN performed so unbalanced, classifying negative reviews so well, but very poor on positive reviews. 
-Also the potential of Random Subspaces (RS) is hinted, it is used in a poorly parameterized way, but the generalization i.e. performance on test data is very good considering. 
+Also the potential of Random Subspaces (RS) is hinted, it is used in a poorly parametrized way, but the generalization i.e. performance on test data is very good considering. 
 However, since it uses SVM as base model it should still be close to the Linear SVM model that is a more basic model than the SVM used in RS. 
 
 
-The majority voting incresed performance as expected from referenced papers in a similar way. 
+The majority voting increased performance as expected from referenced papers in a similar way. 
 It could be argued that this increases complexity over just using one model, but it also balanced the FP and FN classifications. 
 Possibly using majority voting the classifications will be more stable over different datasets, this would require more investigation and could be future work. 
 Using low complexity models made the prediction time fast even when using the voting system.
@@ -33,7 +33,7 @@ The result could possibly be improved with a broader set of games used for train
 
 
 The models performed otherwise as expected with majority voting having the highest accuracy, just as described in related research. 
-Analyzing the plots created had very similar result, since FP and FN is balancing cancelling each other when looking at the figures. 
+Analysing the plots created had very similar result, since FP and FN is balancing cancelling each other when looking at the figures. 
 It also looks like the misclassifications are distributed along the time axis, not causing any large difference in the overall shapes. 
 
 
@@ -43,11 +43,11 @@ It looks like \emph{just} is very common in negative reviews, which might not be
 This is probably due to writing \emph{...just like *another game*..} or \emph{...just too many bugs...}, this analysis could also be future work.
 
 
-The prediction made by the author in \nameref{cha:method} are quite accurate missing only the fact that the number of reviews are almost zero inbetween the game release and release of the new content. 
+The prediction made by the author in \nameref{cha:method} are quite accurate missing only the fact that the number of reviews are almost zero in-between the game release and release of the new content. 
 At the time of the release of Wolcen the number of reviews are around 8000 positive and 6000 negative. 
 Number of reviews increases just before release and start to decline fast after release down to a few reviews per month. 
 Then the review numbers go up just before new content release, peaks just after the release and then goes down again. 
-More reviews were predicted to happen during content release, but the difference in orders of magnitude was correcly captured. 
+More reviews were predicted to happen during content release, but the difference in orders of magnitude was correctly captured. 
 
 
 \section{Method}
@@ -67,7 +67,7 @@ With the modular approach this is possible and could also be used with majority 
 
 It is similar with the models used, most of them commonly used in related works but there are suggestions that more complex models and parametrization would increase accuracy. 
 Because of the modular design this is easy to implement and could also be used with majority voting. 
-It was interesting to use KNN and see the results, eventhough it was not within the commonly used ML models for sentiment analysis. 
+It was interesting to use KNN and see the results, even though it was not within the commonly used ML models for sentiment analysis. 
 
 
 The evaluation made for the complete application on validation dataset was successful and the aim is completed. 

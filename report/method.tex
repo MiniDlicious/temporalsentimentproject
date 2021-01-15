@@ -14,8 +14,8 @@ The two games selected, for training and test and validation, have different pur
 The game chosen for validation is a game the author has prior knowledge about and is fairly new, meaning it has a limited amount of updates and also reviews. 
 For training and testing a larger dataset is wanted so a more known and older game that is still actively developed was chosen. 
 The language is quite specific and can be unique in the gaming community, which is why another game is used as training corpus. 
-However, review languange is also genre specific and the games chosen are from somewhat different genres.
-Only reviews in english were used for this project.
+However, review language is also genre specific and the games chosen are from somewhat different genres.
+Only reviews in English were used for this project.
 
 
 \section{Corpus Preparation}
@@ -39,10 +39,10 @@ For validation the complete train/test dataset will be used for training and val
 
 Different models were tested before a selection was made. 
 Since computational resources are not abundant models with fairly low complexity was used, also adhering to best practice to start with simple models.
-If the simple models, Multinomial Naive Bayes, Linear SVM, Logistic Regression and K-Nearest Neighbors, would produce unsatisfing results further investigation would be required.
+If the simple models, Multinomial Naive Bayes, Linear SVM, Logistic Regression and K-Nearest Neighbors, would produce unsatisfying results further investigation would be required.
 This would include more precise parametrization of the models or testing more complex models. 
 Above 75\% accuracy on the test data would be deemed good enough for a model as this is in parity with results from \cite{gang-wang, rui-xia} and this dataset is assumed be fairly simple. 
-For further proof of future improvement a Random Subspace model with SVM base was used with very basic parameterization, due to the complexity of the model.
+For further proof of future improvement a Random Subspace model with SVM base was used with very basic parametrization, due to the complexity of the model.
 
 
 Models were trained and tested with the confusion matrix and accuracy evaluated for both training and testing data.
@@ -63,7 +63,7 @@ This will later be used as a benchmark for the predictions on validation data in
 
 
 The game chosen is a PC game named \emph{Wolcen: Lords of Mayhem}, which started as a kickstarter with the name \emph{Umbra}. \cite{kickstarter} 
-The game is available at Steam \cite{wolcen} and was released on Febuary 13 2020 after a 4 year early access for a limited audience. 
+The game is available at Steam \cite{wolcen} and was released on February 13 2020 after a 4 year early access for a limited audience. 
 The audience had very high hopes for the game from the very successful kickstarter campaign and glimpses of the game during development. 
 However, the release was not as smoothed as anyone could have hoped for with server issues and unstable gameplay. 
 At the same time it was a somewhat new take on the genre and had many positive elements that could evolve into the game that was expected. 
@@ -79,7 +79,8 @@ Also the top 5 words of each bin can be browsed using the visualization tool.
 
 The development team then released small patches and hotfixes to the game without any new content for almost a year. 
 The 3 December 2020 a large new content update was released that have been very sought for in the community. 
-This were another implementation of what was promised during the kickstarter campaign along with rebalancing and restarting the game and economy that had been affected by the early bugs at release. During the last month more hotfixes and small pathces has been released without any new content.
+This were another implementation of what was promised during the kickstarter campaign along with rebalancing and restarting the game and economy that had been affected by the early bugs at release. 
+During the last month more hotfixes and small patches has been released without any new content.
 
 
 With the information about the game, over 100 hours of gameplay and looking over the patch notes and updates certain patterns are expected. 

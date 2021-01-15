@@ -1,8 +1,47 @@
-Number or reviews a product can get on the internet in an international stage is vast, which is why this has to be automatically checked and interpreted. 
-This report presents a pipeline containint text digestion, sentiment classification and visualization of the reviews over time. 
-Looking at games or other softwares the reviews can change depending on updates, new content or bugs introduced to the users. 
-To validate the pipeline the author predicts how the reviews change over time for a game using prior knowledge and patch notes. 
-The results shows that common machine learning models can be used with simple text features to make accurate predictions on the data. 
-Machine learning models used are Multinomial Naive Bayes, Linear Support Vector Machines, Logtistic Regression, K-Nearest Neighbors and Random Subsampling. 
-For the text features only Term Frequency tested with unigrams. 
-Further the visualization from the validation data resembles the prediction made before the analysis.
+\chapter{Related Research}
+\label{cha:theory}
+
+
+In this chapter a short review of related work in the areas of sentiment analysis and classification will be presented. 
+The focus is on the different parts of the project, which is text processing for the models and used models and their results. 
+Since prior knowledge is assumed it will not cover basic evaluation of models or the principle of the common machine learning models. 
+
+
+\section{Text Processing}
+\label{sec:text-processing}
+
+
+In \cite{gang-wang} the authors compare different text feature sets and different models and how the features used affect the results. 
+Their research focuses on average improvement using Term Frequency (TF), Term Present (TP) or Term Frequency-Inverse Document Frequency (TF-IDF) and unigrams or bigrams. 
+Results shown are that with the datasets used the difference between unigram-TF and unigram-TP is small, while using bigrams can have 5-10\% improvement or perform worse depending on the text data. 
+TF-IDF, however, does only improve over bigrams in certain datasets with certain models. 
+It can be concluded that there are ways to improve the accuracy of models, but that it cannot be said certain which of the models will perform best. 
+Noticeable is that the unigram TF or TP performs well with usually quite high test accuracy. \cite{gang-wang} 
+
+
+Using Position of Speech (POS) tagging can depending on the text origin further improve accuracy of the model, as it can capture other dimensions than just n-grams. \cite{pak} 
+The authors further discusses the subject that different n-grams are better for different types of texts, like movie reviews, product reviews or social media posts. 
+The paper from \cite{pang-bo} also tests different combinations of unigrams, bigrams and POS e.g. emoticons. 
+Their test accuracy for just unigrams is close to the best results of different combinations, being the simplest feature. 
+However, their result is better with unigrams-TP for some models and combination models have better overall performance. 
+
+
+In \cite{tang} the authors show that using sentiment-specific word embeddings together with deep learning can increase accuracy compared to non-deep learning models. 
+This also show that more advanced ways of engineering the features could give better results.
+
+
+\section{Classification Models and Methods}
+\label{sec:classification-models}
+
+
+Throughout the literature review there are some more frequent occurring ML models in sentiment classification. 
+\cite{rui-xia} uses Multinomial Naive Bayes, Maximum Entropy (Multinomial logistic regression) and Support Vector Machines (SVM), which is also used by \cite{pang-bo}. 
+In the work of \cite{gang-wang} Bagging with SVM, AdaBoost and Random Subspaces with SVM are used. 
+The Random Subspace model often has similar accuracy, except for when it is has a quite higher accuracy than the other models. 
+Then Naive Bayes is also used by \cite{pak}.
+
+
+Further \cite{catal} shows that the concept of Majority Voting could be used to increase accuracy from just using a single model. 
+The authors uses SVM, SVM with Bagging and Naive Bayes models and then combines these into a majority vote classifier. 
+The combined classifier always performs better than each of the stand-alone models. 
+They further encourages the use of what they call Multiple classifier systems for sentiment classifications.

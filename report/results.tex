@@ -33,7 +33,7 @@ Result from training data is listed in table \ref{tab:train-table}.
 For training Logistic Regression (LR) had best precision, as seen with high number of TP and low number of FP. 
 KNN instead has the best negative predictive value, low number of FN and high number of TN. 
 The dummy classifier performs worst with 50\% accuracy which is however the perfect score for a balance dataset with stratified dummy classifier. 
-Linear SVM and Multinomial Naive Bayes (MNB) have similar performance where MNB has slighly better values for positive predictions and SVM for negative predictions. 
+Linear SVM and Multinomial Naive Bayes (MNB) have similar performance where MNB has slightly better values for positive predictions and SVM for negative predictions. 
 Best accuracy is gotten from Logistic Regression with 91\% accuracy. 
 The more complex Random Subspace model with very basic parametrization still gets 84\% accuracy, about same as KNN and slightly less than the other models.
 
@@ -83,7 +83,7 @@ This makes Majority Voting using Multinomial Naive Bayes, Linear SVM and Logisti
 \section{Evaluation}
 \label{sec:evaluation-result}
 
-For the evaluation all training and test data is used for traning the final models Multinomial Naive Bayes, Linear SVM, Logistic Regression and Majority Voting. 
+For the evaluation all training and test data is used for training the final models Multinomial Naive Bayes, Linear SVM, Logistic Regression and Majority Voting. 
 
 \begin{table}[H]
     \centering
@@ -106,7 +106,7 @@ The accuracies for the models are about the same with the combination through Ma
 
 Comparing the predicted, figure \ref{fig:plot-comp1}, with the true labels, figure \ref{fig:plot-comp2}, by plotting positive and negative reviews. 
 There is only a slight difference seen in the comparison due to the scaling. 
-Looking at the axis there is a small difference in maximum negaitive reviews and a small difference in positive reviews just behind the peak. 
+Looking at the axis there is a small difference in maximum negative reviews and a small difference in positive reviews just behind the peak. 
 
 \begin{figure}[H]
     \centering
@@ -157,9 +157,9 @@ Here a few more differences are found due to the scaling, mostly in the left par
     \includegraphics[width=0.9\textwidth]{../plots/demo.png}
 \end{figure}
 
-Using the tool tips in the hover tool, as demonstrated in figure \ref{fig:hover-tool}, keywords can be extraced from the different bins. 
+Using the tool tips in the hover tool, as demonstrated in figure \ref{fig:hover-tool}, keywords can be extracted from the different bins. 
 This could be useful for a further analysis and see if the top words for positive and negative reviews respectively are changing over time. 
-A example of words found is listed in table \ref{tab:words}.
+An example of words found is listed in table \ref{tab:words}.
 
 
 \begin{table}[H]
