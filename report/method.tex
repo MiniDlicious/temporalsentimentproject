@@ -28,7 +28,7 @@ Data is then divided into training and test data for model selection, with 70\% 
 
 
 The training reviews are then digested by CountVectorizer from scikit-learn to create the corpus. 
-Term Frequency (TF) of Unigrams was used as it is one of the simplest methods and should produce similar results as Term Present (TP) as described in chapter \nameref{cha:theory}. 
+Term Frequency (TF) of Unigrams was used as it is one of the simplest methods and should produce similar results as Term Present (TP) as described in chapter \autoref{cha:theory}. 
 Reviews for testing are then transformed into the corpus created. 
 For validation the complete train/test dataset will be used for training and validated on the full validation set.
 
@@ -46,27 +46,20 @@ For further proof of future improvement a Random Subspace model with SVM base wa
 
 
 Models were trained and tested with the confusion matrix and accuracy evaluated for both training and testing data.
-Then the best models on the test data was also combined into a Majority Vote system as seen in chapter \nameref{cha:theory}.
+Then the best models on the test data was also combined into a Majority Vote system as seen in chapter \autoref{cha:theory}.
 
 
 For validation the best outcome from testing would be used as sentiment classifier for the visualization analysis.
 
 
-\section{Evaluation}
+\section{Validation}
 \label{sec:evaluation}
 
 
-For evaluation the similar Steam Reviews will be used for a game the author has knowledge about. 
+For validation of the concept of using sentiment classification for time dependent reviews, similar Steam Reviews will be used for a game the author has knowledge about. 
 The author will predict the behaviour of the reviews based on knowledge about the game and by reading update notes from the developers to see what issues have been present in the game. 
 Then in this section there will be a prediction made before investigating the reviews and comparing with the true label graphs. 
-This will later be used as a benchmark for the predictions on validation data in section \nameref{sec:evaluation-result}.
-
-
-The game chosen is a PC game named \emph{Wolcen: Lords of Mayhem}, which started as a kickstarter with the name \emph{Umbra}. \cite{kickstarter} 
-The game is available at Steam \cite{wolcen} and was released on February 13 2020 after a 4 year early access for a limited audience. 
-The audience had very high hopes for the game from the very successful kickstarter campaign and glimpses of the game during development. 
-However, the release was not as smoothed as anyone could have hoped for with server issues and unstable gameplay. 
-At the same time it was a somewhat new take on the genre and had many positive elements that could evolve into the game that was expected. 
+This will later be used as a benchmark for the predictions on validation data in section \autoref{sec:evaluation-result}.
 
 
 Visualization of positive and negative reviews will be used with both the true labels and the predicted labels, along with the confusion matrix and accuracy.
@@ -75,6 +68,13 @@ Also the top 5 words of each bin can be browsed using the visualization tool.
 
 \subsection{Review Prediction}
 \label{sec:review-prediction}
+
+
+The game chosen is a PC game named \emph{Wolcen: Lords of Mayhem}, which started as a kickstarter with the name \emph{Umbra}. \cite{kickstarter} 
+The game is available at Steam \cite{wolcen} and was released on February 13 2020 after a 4 year early access for a limited audience. 
+The audience had very high hopes for the game from the very successful kickstarter campaign and glimpses of the game during development. 
+However, the release was not as smoothed as anyone could have hoped for with server issues and unstable gameplay. 
+At the same time it was a somewhat new take on the genre and had many positive elements that could evolve into the game that was expected. 
 
 
 The development team then released small patches and hotfixes to the game without any new content for almost a year. 

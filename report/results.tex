@@ -24,7 +24,7 @@ The best values are marked in bold along with the true numbers for the confusion
     Logistic Regression           & \textbf{42155} & \textbf{6032} & 3049          & 45351          & \textbf{0.91} \\
     KNN                           & 34689          & 13498         & \textbf{2900} & \textbf{45500} & 0.83          \\
     Random Subspaces (SVM)        & 38322          & 9865          & 6028          & 42372          & 0.84          \\ \midrule
-    \textbf{True Classification}  & \textbf{48187} & \textbf{0}    & \textbf{0}    & \textbf{48400} & \textbf{}    
+    \textbf{True Classification}  & \textbf{48187} & -    & -    & \textbf{48400} & -    
     \end{tabular}
 \end{table}
 
@@ -51,7 +51,7 @@ The more complex Random Subspace model with very basic parametrization still get
     Logistic Regression           & 17084          & 3720          & 2015          & 18576          & \textbf{0.86} \\
     KNN                           & 13461          & 7343          & \textbf{1709} & \textbf{18882} & 0.78          \\
     Random Subspaces (SVM)        & 16446          & 4358          & 3005          & 17586          & 0.82          \\ \midrule
-    \textbf{True Classification}  & \textbf{20804} & \textbf{0}    & \textbf{0}    & \textbf{20591} & \textbf{}    
+    \textbf{True Classification}  & \textbf{20804} & -    & -    & \textbf{20591} & -    
     \end{tabular}
 \end{table}
 
@@ -80,10 +80,10 @@ Compared to the results in table \ref{tab:test-table} the confusion matrix is a 
 This makes Majority Voting using Multinomial Naive Bayes, Linear SVM and Logistic Regression the most accurate of the methods presented. 
 
 
-\section{Evaluation}
+\section{Validation}
 \label{sec:evaluation-result}
 
-For the evaluation all training and test data is used for training the final models Multinomial Naive Bayes, Linear SVM, Logistic Regression and Majority Voting. 
+For the valuation of the complete pipeline all training and test data is used for training the final models Multinomial Naive Bayes, Linear SVM, Logistic Regression and Majority Voting. 
 
 \begin{table}[H]
     \centering
@@ -96,7 +96,7 @@ For the evaluation all training and test data is used for training the final mod
     Linear SVM (SGD)             & 8137           & 2530          & \textbf{1746} & \textbf{11920} & 0.82          \\
     Logistic Regression          & 8342           & 2325          & 2092          & 11574          & 0.82          \\
     Majority Voting              & 8420           & 2247          & 1914          & 11752          & \textbf{0.83} \\ \midrule
-    \textbf{True Classification} & \textbf{10667} & \textbf{0}    & \textbf{0}    & \textbf{13666} &              
+    \textbf{True Classification} & \textbf{10667} & -    & -    & \textbf{13666} & -             
     \end{tabular}
 \end{table}
 

@@ -9,7 +9,7 @@ This chapter analyse the results obtained and the method used, both described in
 \label{sec:discussion-results}
 
 
-The results from training and testing the models are closely related to the results seen in related work, described in chapter \nameref{cha:theory}. 
+The results from training and testing the models are closely related to the results seen in related work, described in chapter \autoref{cha:theory}. 
 The K-Nearest Neighbors (KNN) model was not used in any of the referenced works, but was included since it is a common ML model and results in non-linear classification borders. 
 It was unexpected to see that KNN performed so unbalanced, classifying negative reviews so well, but very poor on positive reviews. 
 Also the potential of Random Subspaces (RS) is hinted, it is used in a poorly parametrized way, but the generalization i.e. performance on test data is very good considering. 
@@ -32,7 +32,7 @@ However, both are games and reviews resemble one another but genre specific word
 The result could possibly be improved with a broader set of games used for training. 
 
 
-The models performed otherwise as expected with majority voting having the highest accuracy, just as described in related research. 
+The models performed otherwise as expected with majority voting having the highest accuracy, just as described in section \autoref{sec:classification-models}. 
 Analysing the plots created had very similar result, since FP and FN is balancing cancelling each other when looking at the figures. 
 It also looks like the misclassifications are distributed along the time axis, not causing any large difference in the overall shapes. 
 
@@ -43,7 +43,7 @@ It looks like \emph{just} is very common in negative reviews, which might not be
 This is probably due to writing \emph{...just like *another game*..} or \emph{...just too many bugs...}, this analysis could also be future work.
 
 
-The prediction made by the author in \nameref{cha:method} are quite accurate missing only the fact that the number of reviews are almost zero in-between the game release and release of the new content. 
+The prediction made by the author in \autoref{cha:method} are quite accurate missing only the fact that the number of reviews are almost zero in-between the game release and release of the new content. 
 At the time of the release of Wolcen the number of reviews are around 8000 positive and 6000 negative. 
 Number of reviews increases just before release and start to decline fast after release down to a few reviews per month. 
 Then the review numbers go up just before new content release, peaks just after the release and then goes down again. 
@@ -60,7 +60,7 @@ Mining the data trough the Steam Web API was good in order to format the data at
 This also ensured some consistency within the data, no missing data points etc. 
 
 
-For this work the most simple text processing, term frequency, was used since it was good enough as seen in \nameref{cha:theory}. 
+For this work the most simple text processing, term frequency, was used since it was good enough as seen in \autoref{cha:theory}. 
 However, as the literature review conclude there are much that can be done to increase the accuracy by a considerable amount. 
 With the modular approach this is possible and could also be used with majority voting, using different corpus features. 
 
@@ -72,7 +72,7 @@ It was interesting to use KNN and see the results, even though it was not within
 
 The evaluation made for the complete application on validation dataset was successful and the aim is completed. 
 Using these kind of end-to-end applications does span over several large fields in terms of literature review and what to cover. 
-Therefore it can be difficult to get any depth in a project with the time limit described in section \nameref{sec:delimitations}. 
+Therefore it can be difficult to get any depth in a project with the time limit described in section \autoref{sec:delimitations}. 
 At the same time the project is exposed to real world scenarios, combining the problem space from industry with academia. 
 With the approach made there are several future work areas available within this package, allowing for much improvement.
 
